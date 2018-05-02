@@ -2,6 +2,12 @@ require 'minitest/autorun'
 require 'minitest/reporters'
 require_relative '../lib/matrix_convert_to_zero'
 
+Minitest::Reporters.use!(
+  Minitest::Reporters::SpecReporter.new,
+  ENV,
+  Minitest.backtrace_filter
+)
+
 # helper method for creating and initializing a matrix with all 1s
 def initialize_matrix(rows, columns)
   # create the matrix using the rows and columns
